@@ -1,13 +1,16 @@
 package guru.springframework.domain;
 
-import lombok.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 /**
  * Created by jt on 6/13/17.
  */
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Notes {
@@ -21,12 +24,5 @@ public class Notes {
 
     @Lob
     private String recipeNotes;
-
-    public Notes() {
-    }
-
-    protected boolean canEqual(final Object other) {
-        return other instanceof Notes;
-    }
 
 }
